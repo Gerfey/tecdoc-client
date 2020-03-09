@@ -1,0 +1,26 @@
+{
+  "name": "gerfey/tecdoc-client",
+  "description": "Client for working with the TecDoc API",
+  "keywords": [
+    "tecdoc",
+    "gerfey",
+    "client"
+  ],
+  "homepage": "https://github.com/Gerfey/tecdoc-client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Levchenkov",
+      "email": "sanjia@live.ru"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "~6.0",
+    "jms/serializer": "^1.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "TecDoc\\": "src/"
+    }
+  }
+}
