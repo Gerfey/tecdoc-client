@@ -2,16 +2,18 @@
   "name": "gerfey/tecdoc-client",
   "description": "Client for working with the TecDoc API",
   "keywords": [
-    "tecdoc",
-    "gerfey",
-    "client"
+    "Gerfey",
+    "API",
+    "TecDoc"
   ],
   "homepage": "https://github.com/Gerfey/tecdoc-client",
   "license": "MIT",
   "authors": [
     {
       "name": "Alexander Levchenkov",
-      "email": "sanjia@live.ru"
+      "email": "sanjia@live.ru",
+      "homepage": "https://github.com/gerfey",
+      "role": "Developer"
     }
   ],
   "require": {
@@ -19,8 +21,16 @@
     "jms/serializer": "^1.1"
   },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "Gerfey\\TecDoc\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gerfey\\TecDoc\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
   }
 }

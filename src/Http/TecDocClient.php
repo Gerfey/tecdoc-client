@@ -2,18 +2,12 @@
 
 namespace Gerfey\TecDoc\Http;
 
-use GuzzleHttp\ClientInterface;
-
 class TecDocClient
 {
     protected $client;
 
-    /**
-     * TecDocClient constructor.
-     * @param ClientInterface $client
-     */
-    public function __construct(ClientInterface $client)
+    public function __construct()
     {
-        $this->client = $client;
+
     }
 }
