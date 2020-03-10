@@ -32,7 +32,7 @@ class Pegasus_3_0 extends Request
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
 
         return $this->createRequest('POST', [
-            'articleNumber' => $article
+            'articleNumber' => $articleNumber
         ]);
     }
 }
