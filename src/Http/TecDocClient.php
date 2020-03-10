@@ -2,12 +2,13 @@
 
 namespace Gerfey\TecDoc\Http;
 
-class TecDocClient
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\ClientException;
+
+class TecDocClient extends BaseClient
 {
-    protected $client;
+    protected $hostname = 'https://webservice.tecalliance.services';
 
-    public function __construct()
-    {
-
-    }
+    protected $endpoint = '/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint';
 }
