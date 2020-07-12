@@ -27,12 +27,14 @@ class Pegasus_3_0 extends Request
         ]);
     }
 
-    public function getArticleDirectSearchAllNumbersWithState(string $articleNumber): ResponseTecDocInterface
+    public function getArticleDirectSearchAllNumbersWithState(string $articleNumber, int $numberType = 0): ResponseTecDocInterface
     {
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
 
         return $this->createRequest('POST', [
-            'articleNumber' => $articleNumber
+            'articleNumber' => $articleNumber,
+            'numberType' => $numberType,
+            'searchExact' => true
         ]);
     }
 }
