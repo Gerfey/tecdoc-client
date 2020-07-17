@@ -71,6 +71,7 @@ class BaseClient implements BaseClientInterface
     {
         return [
             'provider' => getenv('TECDOC_PROVIDER_ID'),
+            'country' => getenv('TECDOC_LANGUAGE_CODE'),
             'lang' => getenv('TECDOC_LANGUAGE_CODE'),
             'articleCountry' => getenv('TECDOC_LANGUAGE_CODE')
         ];
