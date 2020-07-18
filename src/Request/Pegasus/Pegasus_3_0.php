@@ -53,4 +53,45 @@ class Pegasus_3_0 extends Request
             ]
         );
     }
+
+    public function getModelSeries(int $manufacturer_id, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getModelSeries';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'linkingTargetType' => $linkingTargetType,
+                'manuId' => $manufacturer_id,
+            ]
+        );
+    }
+
+    public function getVehicleIdsByCriteria(int $manufacturer_id, int $model_id, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getVehicleIdsByCriteria';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'carType' => $linkingTargetType,
+                'manuId' => $manufacturer_id,
+                'modId' => $model_id,
+            ]
+        );
+    }
+
+    public function getVehicleByIds3(array $carIds)
+    {
+        $this->function = 'getVehicleByIds3';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'carIds' => [
+                    'array' => $carIds,
+                ],
+            ]
+        );
+    }
 }

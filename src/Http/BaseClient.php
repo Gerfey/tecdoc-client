@@ -73,7 +73,8 @@ class BaseClient implements BaseClientInterface
             'provider' => getenv('TECDOC_PROVIDER_ID'),
             'country' => getenv('TECDOC_LANGUAGE_CODE'),
             'lang' => getenv('TECDOC_LANGUAGE_CODE'),
-            'articleCountry' => getenv('TECDOC_LANGUAGE_CODE')
+            'articleCountry' => getenv('TECDOC_LANGUAGE_CODE'),
+            'countriesCarSelection' => getenv('TECDOC_LANGUAGE_CODE')
         ];
     }
 }
