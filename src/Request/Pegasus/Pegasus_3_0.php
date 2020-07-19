@@ -28,6 +28,7 @@ class Pegasus_3_0 extends Request
 
     public function getArticleDirectSearchAllNumbersWithState(
         string $articleNumber,
+        string $brandId = null,
         int $numberType = 0
     ): ResponseTecDocInterface {
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
@@ -36,10 +37,18 @@ class Pegasus_3_0 extends Request
             'POST',
             [
                 'articleNumber' => $articleNumber,
+                'brandId' => $brandId,
                 'numberType' => $numberType,
                 'searchExact' => true,
             ]
         );
+    }
+
+    public function getAmBrands()
+    {
+        $this->function = 'getAmBrands';
+
+        return $this->createRequest('POST', []);
     }
 
     public function getManufacturers(string $linkingTargetType = 'P')
