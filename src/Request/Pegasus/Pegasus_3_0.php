@@ -28,7 +28,23 @@ class Pegasus_3_0 extends Request
 
     public function getArticleDirectSearchAllNumbersWithState(
         string $articleNumber,
-        string $brandId = null,
+        int $numberType = 0
+    ): ResponseTecDocInterface {
+        $this->function = 'getArticleDirectSearchAllNumbersWithState';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'articleNumber' => $articleNumber,
+                'numberType' => $numberType,
+                'searchExact' => true,
+            ]
+        );
+    }
+
+    public function getArticleDirectSearchAllNumbersWithStateFilterBrand(
+        string $articleNumber,
+        int $brandId,
         int $numberType = 0
     ): ResponseTecDocInterface {
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
