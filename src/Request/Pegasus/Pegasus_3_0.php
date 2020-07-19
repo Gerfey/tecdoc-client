@@ -44,7 +44,7 @@ class Pegasus_3_0 extends Request
 
     public function getArticleDirectSearchAllNumbersWithStateFilterBrand(
         string $articleNumber,
-        int $brandId,
+        int $brandId = null,
         int $numberType = 0
     ): ResponseTecDocInterface {
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
