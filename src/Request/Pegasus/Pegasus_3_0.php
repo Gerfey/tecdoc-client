@@ -119,4 +119,47 @@ class Pegasus_3_0 extends Request
             ]
         );
     }
+
+    public function getShortCuts2(int $linkingTargetId, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getShortCuts2';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'linkingTargetId' => $linkingTargetId,
+                'linkingTargetType' => $linkingTargetType,
+            ]
+        );
+    }
+
+    public function getChildNodesAllLinkingTarget2(int $linkingTargetId, int $shortCutId, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getChildNodesAllLinkingTarget2';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'linkingTargetId' => $linkingTargetId,
+                'shortCutId' => $shortCutId,
+                'linkingTargetType' => $linkingTargetType,
+                'linked' => true,
+                'childNodes' => true,
+            ]
+        );
+    }
+
+    public function getArticleIdsWithState(int $linkingTargetId, int $assemblyGroupNodeId, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getArticleIdsWithState';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'linkingTargetId' => $linkingTargetId,
+                'assemblyGroupNodeId' => $assemblyGroupNodeId,
+                'linkingTargetType' => $linkingTargetType
+            ]
+        );
+    }
 }
