@@ -42,6 +42,24 @@ class Pegasus_3_0 extends Request
         );
     }
 
+    public function getArticleDirectSearchAllNumbersWithStateFilterByGenericArticleId(
+        string $articleNumber,
+        int $genericArticleId,
+        int $numberType = 0
+    ): ResponseTecDocInterface {
+        $this->function = 'getArticleDirectSearchAllNumbersWithState';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'articleNumber' => $articleNumber,
+                'genericArticleId' => $genericArticleId,
+                'numberType' => $numberType,
+                'searchExact' => true,
+            ]
+        );
+    }
+
     public function getArticleDirectSearchAllNumbersWithStateFilterBrand(
         string $articleNumber,
         int $brandId = null,
@@ -133,8 +151,11 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    public function getChildNodesAllLinkingTarget2(int $linkingTargetId, int $shortCutId, string $linkingTargetType = 'P')
-    {
+    public function getChildNodesAllLinkingTarget2(
+        int $linkingTargetId,
+        int $shortCutId,
+        string $linkingTargetType = 'P'
+    ) {
         $this->function = 'getChildNodesAllLinkingTarget2';
 
         return $this->createRequest(
@@ -149,8 +170,11 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    public function getArticleIdsWithState(int $linkingTargetId, int $assemblyGroupNodeId, string $linkingTargetType = 'P')
-    {
+    public function getArticleIdsWithState(
+        int $linkingTargetId,
+        int $assemblyGroupNodeId,
+        string $linkingTargetType = 'P'
+    ) {
         $this->function = 'getArticleIdsWithState';
 
         return $this->createRequest(
@@ -158,7 +182,7 @@ class Pegasus_3_0 extends Request
             [
                 'linkingTargetId' => $linkingTargetId,
                 'assemblyGroupNodeId' => $assemblyGroupNodeId,
-                'linkingTargetType' => $linkingTargetType
+                'linkingTargetType' => $linkingTargetType,
             ]
         );
     }
