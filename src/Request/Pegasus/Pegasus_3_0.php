@@ -186,4 +186,100 @@ class Pegasus_3_0 extends Request
             ]
         );
     }
+
+    /**
+     * Получаем список производителей
+     *
+     * @param  int  $articleId
+     * @param  string  $linkingTargetType
+     *
+     * @return ResponseTecDocInterface|mixed
+     */
+    public function getArticleLinkedAllLinkingTargetManufacturer(int $articleId, string $linkingTargetType = 'P')
+    {
+        $this->function = 'getArticleLinkedAllLinkingTargetManufacturer';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'articleId' => $articleId,
+                'linkingTargetType' => $linkingTargetType,
+            ]
+        );
+    }
+
+    /**
+     * Получаем список модификаций производителя
+     *
+     * @param  int  $articleId
+     * @param  int  $linkingTargetManuId
+     * @param  string  $linkingTargetType
+     *
+     * @return ResponseTecDocInterface|mixed
+     */
+    public function getArticleLinkedAllLinkingTarget3(
+        int $articleId,
+        int $linkingTargetManuId,
+        string $linkingTargetType = 'P'
+    ) {
+        $this->function = 'getArticleLinkedAllLinkingTarget3';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'articleId' => $articleId,
+                'linkingTargetManuId' => $linkingTargetManuId,
+                'linkingTargetType' => $linkingTargetType,
+            ]
+        );
+    }
+
+    /**
+     * Получаем информацию по выбранным модификациям производителя
+     *
+     * @param  int  $articleId
+     * @param  array  $linkedArticlePairs
+     * @param  string  $linkingTargetType
+     *
+     * @return ResponseTecDocInterface|mixed
+     */
+    public function getArticleLinkedAllLinkingTargetsByIds3(
+        int $articleId,
+        array $linkedArticlePairs,
+        string $linkingTargetType = 'P'
+    ) {
+        $this->function = 'getArticleLinkedAllLinkingTargetsByIds3';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'articleId' => $articleId,
+                'linkingTargetType' => $linkingTargetType,
+                'linkedArticlePairs' => [
+                    'array' => $linkedArticlePairs,
+                ],
+            ]
+        );
+    }
+
+    /**
+     * Получаем наименования по идентификатору модели машины
+     *
+     * @param  array  $carIds
+     *
+     * @return ResponseTecDocInterface|mixed
+     */
+    public function getVehicleByIds4(array $carIds)
+    {
+        $this->function = 'getVehicleByIds4';
+
+        return $this->createRequest(
+            'POST',
+            [
+                'carIds' => [
+                    'array' => $carIds,
+                ],
+            ]
+        );
+    }
 }
