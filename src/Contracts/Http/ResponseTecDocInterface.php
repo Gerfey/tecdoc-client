@@ -2,11 +2,13 @@
 
 namespace Gerfey\TecDoc\Contracts\Http;
 
-use Psr\Http\Message\ResponseInterface;
+use Illuminate\Support\Collection;
 
 interface ResponseTecDocInterface
 {
-    public function getJson();
+    public function getJson(): object;
 
-    public function getStatusCode();
+    public function getCollection(): Collection;
+
+    public function getStatusCode(): int;
 }
