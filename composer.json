@@ -1,36 +1,37 @@
 {
-  "name": "gerfey/tecdoc-client",
-  "description": "Client for working with the TecDoc API",
-  "keywords": [
-    "Gerfey",
-    "API",
-    "TecDoc"
-  ],
-  "homepage": "https://github.com/Gerfey/tecdoc-client",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Alexander Levchenkov",
-      "email": "sanjia@live.ru",
-      "homepage": "https://github.com/gerfey",
-      "role": "Developer"
+    "name": "gerfey/tecdoc-client",
+    "description": "Client for working with the TecDoc API",
+    "keywords": [
+        "Gerfey",
+        "API",
+        "TecDoc"
+    ],
+    "homepage": "https://github.com/Gerfey/tecdoc-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Levchenkov",
+            "email": "sanjia@live.ru",
+            "homepage": "https://github.com/gerfey",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "illuminate/support": "^7.27",
+        "jms/serializer": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gerfey\\TecDoc\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gerfey\\TecDoc\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
     }
-  ],
-  "require": {
-    "guzzlehttp/guzzle": "~6.0",
-    "jms/serializer": "^1.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "Gerfey\\TecDoc\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Gerfey\\TecDoc\\": "tests/"
-    }
-  },
-  "config": {
-    "sort-packages": true
-  }
 }
