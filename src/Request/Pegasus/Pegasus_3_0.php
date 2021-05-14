@@ -28,7 +28,8 @@ class Pegasus_3_0 extends Request
 
     public function getArticleDirectSearchAllNumbersWithState(
         string $articleNumber,
-        int $numberType = 0
+        int $numberType = 0,
+        ?int $brandId = null
     ): ResponseTecDocInterface {
         $this->function = 'getArticleDirectSearchAllNumbersWithState';
 
@@ -37,6 +38,7 @@ class Pegasus_3_0 extends Request
             [
                 'articleNumber' => $articleNumber,
                 'numberType' => $numberType,
+                'brandId' => $brandId,
                 'searchExact' => true,
             ]
         );
@@ -190,8 +192,8 @@ class Pegasus_3_0 extends Request
     /**
      * Получаем список производителей
      *
-     * @param  int  $articleId
-     * @param  string  $linkingTargetType
+     * @param int $articleId
+     * @param string $linkingTargetType
      *
      * @return ResponseTecDocInterface|mixed
      */
@@ -211,9 +213,9 @@ class Pegasus_3_0 extends Request
     /**
      * Получаем список модификаций производителя
      *
-     * @param  int  $articleId
-     * @param  int  $linkingTargetManuId
-     * @param  string  $linkingTargetType
+     * @param int $articleId
+     * @param int $linkingTargetManuId
+     * @param string $linkingTargetType
      *
      * @return ResponseTecDocInterface|mixed
      */
@@ -237,9 +239,9 @@ class Pegasus_3_0 extends Request
     /**
      * Получаем информацию по выбранным модификациям производителя
      *
-     * @param  int  $articleId
-     * @param  array  $linkedArticlePairs
-     * @param  string  $linkingTargetType
+     * @param int $articleId
+     * @param array $linkedArticlePairs
+     * @param string $linkingTargetType
      *
      * @return ResponseTecDocInterface|mixed
      */
@@ -265,7 +267,7 @@ class Pegasus_3_0 extends Request
     /**
      * Получаем наименования по идентификатору модели машины
      *
-     * @param  array  $carIds
+     * @param array $carIds
      *
      * @return ResponseTecDocInterface|mixed
      */
