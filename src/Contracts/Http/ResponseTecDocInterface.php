@@ -6,7 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 
 interface ResponseTecDocInterface
 {
-    public function getJson();
+    public function getJson(): mixed;
 
-    public function getStatusCode();
+    public function getStatusCode(): int;
 }

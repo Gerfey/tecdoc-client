@@ -10,11 +10,11 @@ use GuzzleHttp\Exception\ClientException;
 
 class BaseClient implements BaseClientInterface
 {
-    protected $hostname = '';
+    protected string $hostname = '';
 
-    protected $endpoint = '';
+    protected string $endpoint = '';
 
-    protected $client;
+    protected Client $client;
 
     public function __construct()
     {

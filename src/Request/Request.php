@@ -7,7 +7,7 @@ use Gerfey\TecDoc\Contracts\Http\ResponseTecDocInterface;
 
 class Request
 {
-    private $client;
+    private BaseClientInterface $client;
 
     public function __construct(BaseClientInterface $client)
     {
