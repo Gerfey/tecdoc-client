@@ -10,15 +10,12 @@ use GuzzleHttp\Exception\ClientException;
 
 class BaseClient implements BaseClientInterface
 {
-    protected $hostname = '';
+    protected string $hostname = '';
 
-    protected $endpoint = '';
+    protected string $endpoint = '';
 
-    protected $client;
+    protected Client $client;
 
-    /**
-     * BaseClient constructor.
-     */
     public function __construct()
     {
         $this->client = new Client([
@@ -28,20 +25,13 @@ class BaseClient implements BaseClientInterface
         ]);
     }
 
-    /**
-     * @param string $method
-     * @param string $uri
-     * @param array $options
-     * @return ResponseTecDocInterface
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
     public function createRequest(string $method = 'POST', array $options = []): ResponseTecDocInterface
     {
         try {
             $response = $this->client->request($method, $this->endpoint, [
                 'content-type' => 'application/json',
                 'query' => [
-                    'api_key' => getenv('TECDOC_API_KEY')
+                    'api_key' => config('tecdoc.auth.api_key')
                 ],
                 'body' => json_encode($this->getQueryOptions($options))
             ]);
@@ -51,10 +41,6 @@ class BaseClient implements BaseClientInterface
         }
     }
 
-    /**
-     * @param array $options
-     * @return array
-     */
     private function getQueryOptions(array $options = []): array
     {
         $correct_options = [];
@@ -64,17 +50,14 @@ class BaseClient implements BaseClientInterface
         return $correct_options;
     }
 
-    /**
-     * @return array
-     */
     private function getDefaultOptions(): array
     {
         return [
-            'provider' => getenv('TECDOC_PROVIDER_ID'),
-            'country' => getenv('TECDOC_LANGUAGE_CODE'),
-            'lang' => getenv('TECDOC_LANGUAGE_CODE'),
-            'articleCountry' => getenv('TECDOC_LANGUAGE_CODE'),
-            'countriesCarSelection' => getenv('TECDOC_LANGUAGE_CODE')
+            'provider' => config('tecdoc.auth.provider_id'),
+            'country' => config('tecdoc.auth.language_code'),
+            'lang' => config('tecdoc.auth.language_code'),
+            'articleCountry' => config('tecdoc.auth.language_code'),
+            'countriesCarSelection' => config('tecdoc.auth.language_code')
         ];
     }
 }

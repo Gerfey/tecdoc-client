@@ -7,19 +7,19 @@ use Psr\Http\Message\ResponseInterface;
 
 class ResponseTecDoc implements ResponseTecDocInterface
 {
-    private $response;
+    private ResponseInterface $response;
 
     public function __construct(ResponseInterface $response)
     {
         $this->response = $response;
     }
 
-    public function getJson()
+    public function getJson(): mixed
     {
         return json_decode($this->response->getBody()->getContents());
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->response->getStatusCode();
     }
