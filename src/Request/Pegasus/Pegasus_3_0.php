@@ -189,14 +189,6 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    /**
-     * Получаем список производителей
-     *
-     * @param int $articleId
-     * @param string $linkingTargetType
-     *
-     * @return ResponseTecDocInterface|mixed
-     */
     public function getArticleLinkedAllLinkingTargetManufacturer(int $articleId, string $linkingTargetType = 'P')
     {
         $this->function = 'getArticleLinkedAllLinkingTargetManufacturer';
@@ -210,15 +202,6 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    /**
-     * Получаем список модификаций производителя
-     *
-     * @param int $articleId
-     * @param int $linkingTargetManuId
-     * @param string $linkingTargetType
-     *
-     * @return ResponseTecDocInterface|mixed
-     */
     public function getArticleLinkedAllLinkingTarget3(
         int $articleId,
         int $linkingTargetManuId,
@@ -236,15 +219,6 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    /**
-     * Получаем информацию по выбранным модификациям производителя
-     *
-     * @param int $articleId
-     * @param array $linkedArticlePairs
-     * @param string $linkingTargetType
-     *
-     * @return ResponseTecDocInterface|mixed
-     */
     public function getArticleLinkedAllLinkingTargetsByIds3(
         int $articleId,
         array $linkedArticlePairs,
@@ -264,13 +238,6 @@ class Pegasus_3_0 extends Request
         );
     }
 
-    /**
-     * Получаем наименования по идентификатору модели машины
-     *
-     * @param array $carIds
-     *
-     * @return ResponseTecDocInterface|mixed
-     */
     public function getVehicleByIds4(array $carIds)
     {
         $this->function = 'getVehicleByIds4';
